@@ -50,9 +50,9 @@ const Navbar = () => {
               alt=""
               className="w-7 rounded-full mr-5 cursor-pointer relative"
             />
-            <div className="w-16 h-20 border absolute mt-5">
+            {/* <div className="w-16 h-20 border absolute mt-5">
 
-            </div>
+            </div> */}
           </div>
 
           <span className="mr-5 cursor-pointer">
