@@ -1,17 +1,23 @@
-import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const handleAdminLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
 
-    const user = {
+    const user = JSON.stringify({
       email,
       password,
-    };
-    console.log(user);
+    });
+
+    localStorage.setItem("captify", user);
+
+    toast.success("Admin login successful");
+    navigate("/home");
   };
   return (
     <div className="flex justify-center min-h-screen items-center mx-5 md:mx-0">
