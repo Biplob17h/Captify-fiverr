@@ -12,36 +12,12 @@ const Home = () => {
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-
       <div className="drawer-content flex flex-col items-center justify-center">
-        <Navbar></Navbar>
+        <Navbar ></Navbar>
         {/* Page content here */}
         <div className="w-full min-h-screen text-center mt-[20%]">
           <HomePage show={show}></HomePage>
           <Users show={show}></Users>
-        </div>
-
-        {/* small screen breadcrumb */}
-        <div className="md:hidden flex justify-start w-full">
-          <label
-            htmlFor="my-drawer-2"
-            aria-label="open sidebar"
-            className="btn btn-square btn-ghost"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="inline-block w-6 h-6 stroke-current"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </label>
         </div>
       </div>
       <div className="drawer-side">
@@ -50,10 +26,16 @@ const Home = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu p-4  min-h-full text-base-content w-60 md:w-80 bg-[#0f172a]">
+        <ul className={`menu p-4  min-h-full text-base-content w-60 bg-[#0f172a]`}>
           {/* Sidebar content here */}
-          <Link onClick={()=>{setShow('home')}}>
-            <h1 className="text-2xl font-bold text-center mt-3">Captify Admin</h1>
+          <Link
+            onClick={() => {
+              setShow("home");
+            }}
+          >
+            <h1 className="text-2xl font-bold text-center mt-3">
+              Captify Admin
+            </h1>
             <h1 className="mt-12 mb-5">Pages</h1>
           </Link>
           <li
@@ -66,7 +48,7 @@ const Home = () => {
               <span>
                 <FaHome />
               </span>{" "}
-              Home
+              <span>Home</span>
             </Link>
           </li>
           <li
