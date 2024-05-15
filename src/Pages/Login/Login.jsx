@@ -21,8 +21,8 @@ const Login = () => {
   };
   return (
     <div className="flex justify-center min-h-screen items-center mx-5 md:mx-0">
-      <div className="border  rounded shadow md:w-[500px] md:h-[430px]">
-        <h1 className="font-bold text-white text-center pt-5 md:text-3xl md:pt-20">
+      <div className="border border-[#460073]  rounded shadow md:w-[500px] md:h-[430px]">
+        <h1 className="font-bold  text-center pt-5 md:text-3xl md:pt-20 text-[#460073]">
           ADMIN PANEL
         </h1>
         <form onSubmit={handleAdminLogin} action="" className="mx-10">
@@ -41,6 +41,7 @@ const Login = () => {
               className="grow"
               placeholder="Email"
               name="email"
+              defaultValue={'admin@gmail.com'}
             />
           </label>
           <label className="input input-bordered flex items-center gap-2 mt-3">
@@ -61,6 +62,7 @@ const Login = () => {
               className="grow"
               placeholder="Password"
               name="password"
+              defaultValue={'123456'}
             />
           </label>
           {/* Forgot section */}
