@@ -8,6 +8,7 @@ import { IoMdNotifications } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import us from "../../assets/flags/us.svg";
 import NavBarProfile from "./NavBarProfile";
+import NavBarNotifications from "./NavBarNotifications";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Navbar = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                className="inline-block w-6 h-6 stroke-current"
+                className="inline-block w-6 h-6 stroke-current "
               >
                 <path
                   strokeLinecap="round"
@@ -52,7 +53,7 @@ const Navbar = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
               fill="currentColor"
-              className="w-4 h-4 opacity-70"
+              className="w-4 h-4 opacity-70 cursor-pointer"
             >
               <path
                 fillRule="evenodd"
@@ -64,7 +65,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex items-center">
-        <div className="flex mr-5">
+        <div className="flex mr-5 relative">
           <span
             onClick={() => {
               showNav === "setting" ? setShowNav(null) : setShowNav("setting");
@@ -73,16 +74,21 @@ const Navbar = () => {
           >
             <CiSettings />
           </span>
-          <span
-            onClick={() => {
-              showNav === "notifications"
-                ? setShowNav(null)
-                : setShowNav("notifications");
-            }}
-            className=" cursor-pointer"
-          >
-            <IoMdNotifications />
-          </span>
+          <div className="flex">
+            <span
+              onClick={() => {
+                showNav === "notifications"
+                  ? setShowNav(null)
+                  : setShowNav("notifications");
+              }}
+              className=" cursor-pointer"
+            >
+              <IoMdNotifications className=""/>
+            </span>
+            <div className="absolute top-[190%] right-[518%]">
+              <NavBarNotifications showNav={showNav}/>
+            </div>
+          </div>
         </div>
 
         {/* navbar admin icon */}
