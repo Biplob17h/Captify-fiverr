@@ -7,7 +7,7 @@ const App = () => {
   
   
   return (
-    <div className="text-2xl bg-black min-h-screen text-white max-w-[1600px] mx-auto">
+    <div className="text-2xl bg-black min-h-screen text-white  mx-auto">
       <Toaster position="top-center" reverseOrder={false} />
       <div>
         <RouterProvider router={routes}></RouterProvider>
