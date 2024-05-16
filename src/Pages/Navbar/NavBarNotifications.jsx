@@ -14,7 +14,7 @@ const NavBarNotifications = ({ showNav }) => {
   return (
     <div
       className={`w-[350px]  rounded-[8px]
-               h-[450px] border  absolute   ${
+               h-[450px] border  absolute z-[999]   ${
                  showNav === "notifications" ? "" : "hidden"
                }`}
     >

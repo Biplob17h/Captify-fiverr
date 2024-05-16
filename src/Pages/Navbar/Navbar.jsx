@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import us from "../../assets/flags/us.svg";
 import NavBarProfile from "./NavBarProfile";
 import NavBarNotifications from "./NavBarNotifications";
+import NavBarFlags from "./NavBarFlags";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -68,6 +69,17 @@ const Navbar = () => {
         <div className="flex mr-5 relative">
           <span
             onClick={() => {
+              showNav === "flags" ? setShowNav(null) : setShowNav("flags");
+            }}
+            className="mr-5 cursor-pointer"
+          >
+            <img className="w-[24px] rounded-full" src={us} alt="" />
+            <div>
+              <NavBarFlags showNav={showNav}></NavBarFlags>
+            </div>
+          </span>
+          <span
+            onClick={() => {
               showNav === "setting" ? setShowNav(null) : setShowNav("setting");
             }}
             className="mr-5 cursor-pointer"
@@ -85,7 +97,7 @@ const Navbar = () => {
             >
               <IoMdNotifications className=""/>
             </span>
-            <div className="absolute top-[190%] right-[518%]">
+            <div className="absolute top-[190%] right-[310%]">
               <NavBarNotifications showNav={showNav}/>
             </div>
           </div>
