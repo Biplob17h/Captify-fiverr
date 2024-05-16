@@ -11,7 +11,7 @@ import NavBarProfile from "./NavBarProfile";
 import NavBarNotifications from "./NavBarNotifications";
 import NavBarFlags from "./NavBarFlags";
 
-const Navbar = () => {
+const Navbar = ({ hideNav, setHideNav }) => {
   const navigate = useNavigate();
   const [showNav, setShowNav] = useState(null);
   console.log(showNav);
@@ -20,7 +20,12 @@ const Navbar = () => {
     <div className="w-full h-20 flex justify-between items-center shadow rounded  px-5">
       {/* big screen breadcrumb */}
       <div className=" items-center justify-between flex">
-        <div className="cursor-pointer hidden md:block">
+        <div
+          onClick={() => {
+            setHideNav(!hideNav);
+          }}
+          className="cursor-pointer  p-2 hidden md:block"
+        >
           <FaBars color="#460073" />
         </div>
         <div>
@@ -95,10 +100,10 @@ const Navbar = () => {
               }}
               className=" cursor-pointer"
             >
-              <IoMdNotifications className=""/>
+              <IoMdNotifications className="" />
             </span>
             <div className="absolute top-[190%] right-[310%]">
-              <NavBarNotifications showNav={showNav}/>
+              <NavBarNotifications showNav={showNav} />
             </div>
           </div>
         </div>
