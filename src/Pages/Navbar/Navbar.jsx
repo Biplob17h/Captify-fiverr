@@ -24,7 +24,7 @@ const Navbar = () => {
         </div>
         <div>
           {/* small screen breadcrumb */}
-          <div className="flex justify-start w-full md:hidden">
+          <div className="flex justify-start w-full z-[99] md:hidden">
             <label
               htmlFor="my-drawer-2"
               aria-label="open sidebar"
@@ -46,7 +46,7 @@ const Navbar = () => {
             </label>
           </div>
         </div>
-        <div>
+        <div className="hidden md:block">
           <label className="input input-bordered flex items-center gap-2 ml-5 pl-5">
             <input type="text" className="grow" placeholder="Search" />
             <svg
