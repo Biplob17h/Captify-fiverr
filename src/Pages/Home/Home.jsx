@@ -1,14 +1,20 @@
 /* eslint-disable no-unused-vars */
-import { FaHome, FaUsers } from "react-icons/fa";
+import { FaHome, FaUsers, FaCrown, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import HomePage from "./HomePage";
 import { useState } from "react";
 import Users from "../Users/Users";
 import Navbar from "../Navbar/Navbar";
+import SubscriptionCard from "../Subscription/SubscriptionCard";
+import Subscriber from "../Subscription/Subscriber";
+import { IoTicketSharp } from "react-icons/io5";
+import { BsChatRightDots } from "react-icons/bs";
+import LiveChat from "../LiveChat/LiveChat";
+import Tickets from "../Tickets/Tickets";
 
 const Home = () => {
   const [show, setShow] = useState("home");
-  const [hideNav, setHideNav] = useState(false)
+  const [hideNav, setHideNav] = useState(false);
 
   return (
     <div className="drawer lg:drawer-open">
@@ -16,9 +22,13 @@ const Home = () => {
       <div className="drawer-content flex flex-col items-center justify-center">
         <Navbar setHideNav={setHideNav} hideNav={hideNav}></Navbar>
         {/* Page content here */}
-        <div className="w-full min-h-screen text-center mt-[20%]">
+        <div className="w-full min-h-screen text-center">
           <HomePage show={show}></HomePage>
           <Users show={show}></Users>
+          <SubscriptionCard show={show}></SubscriptionCard>
+          <Subscriber show={show}></Subscriber>
+          <LiveChat show={show}></LiveChat>
+          <Tickets show={show}></Tickets>
         </div>
       </div>
       <div className="drawer-side">
@@ -27,7 +37,11 @@ const Home = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className={`menu p-4  min-h-full text-base-content w-60 bg-[#0f172a] ${hideNav ? "hidden transition duration-500 ease-in " : ""}`}>
+        <ul
+          className={`menu p-4  min-h-full text-base-content w-60 bg-[#0f172a] ${
+            hideNav ? "hidden transition duration-500 ease-in " : ""
+          }`}
+        >
           {/* Sidebar content here */}
           <Link
             onClick={() => {
@@ -43,7 +57,9 @@ const Home = () => {
             onClick={() => {
               setShow("home");
             }}
-            className="text-[15px] hover:bg-[#460073] rounded"
+            className={`text-[15px] hover:bg-[#460073] hover:text-white rounded mt-2 ${
+              show === "home" ? "bg-[#460073] text-white" : "bg-[#0f172a]"
+            }`}
           >
             <Link>
               <span>
@@ -56,13 +72,75 @@ const Home = () => {
             onClick={() => {
               setShow("users");
             }}
-            className="text-[15px] hover:bg-[#460073] rounded mt-2"
+            className={`text-[15px] hover:bg-[#460073] hover:text-white rounded mt-2 ${
+              show === "users" ? "bg-[#460073] text-white" : "bg-[#0f172a]"
+            }`}
           >
             <Link>
               <span>
                 <FaUsers />
               </span>
               Users
+            </Link>
+          </li>
+          <li
+            onClick={() => {
+              setShow("subscription");
+            }}
+            className={`text-[15px] hover:bg-[#460073] hover:text-white rounded mt-2 ${
+              show === "subscription" ? "bg-[#460073] text-white" : "bg-[#0f172a]"
+            }`}
+          >
+            <Link>
+              <span>
+                <FaCrown />
+              </span>
+              Subscription
+            </Link>
+          </li>
+          <li
+            onClick={() => {
+              setShow("Subscriber");
+            }}
+            className={`text-[15px] hover:bg-[#460073] hover:text-white rounded mt-2 ${
+              show === "Subscriber" ? "bg-[#460073] hover:text-white" : "bg-[#0f172a]"
+            }`}
+          >
+            <Link>
+              <span>
+                <FaUser />
+              </span>
+              Subscriber
+            </Link>
+          </li>
+          <li
+            onClick={() => {
+              setShow("tickets");
+            }}
+            className={`text-[15px] hover:bg-[#460073] hover:text-white rounded mt-2 ${
+              show === "tickets" ? "bg-[#460073] hover:text-white" : "bg-[#0f172a]"
+            }`}
+          >
+            <Link>
+              <span>
+                <IoTicketSharp /> 
+              </span>
+              Tickets
+            </Link>
+          </li>
+          <li
+            onClick={() => {
+              setShow("liveChat");
+            }}
+            className={`text-[15px] hover:bg-[#460073] hover:text-white rounded mt-2 ${
+              show === "liveChat" ? "bg-[#460073] hover:text-white" : "bg-[#0f172a]"
+            }`}
+          >
+            <Link>
+              <span>
+                <BsChatRightDots /> 
+              </span>
+              Live Chat
             </Link>
           </li>
         </ul>
