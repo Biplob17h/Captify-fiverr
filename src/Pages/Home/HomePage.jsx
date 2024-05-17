@@ -13,7 +13,7 @@ import "./home.scss";
 
 const HomePage = ({ show }) => {
   return (
-    <div className={`${show === "home" ? "" : "hidden"}`}>
+    <div className={`${show === "home" ? "" : "hidden"} mt-[27%]`}>
       <div className="home mx-[40px]">
         <div className="box box1">
           <TopBox />
