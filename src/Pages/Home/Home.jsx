@@ -11,6 +11,7 @@ import { IoTicketSharp } from "react-icons/io5";
 import { BsChatRightDots } from "react-icons/bs";
 import LiveChat from "../LiveChat/LiveChat";
 import Tickets from "../Tickets/Tickets";
+import SystemHealth from "../SystemHealth/SystemHealth";
 
 const Home = () => {
   const [show, setShow] = useState("home");
@@ -29,6 +30,7 @@ const Home = () => {
           <Subscriber show={show}></Subscriber>
           <LiveChat show={show}></LiveChat>
           <Tickets show={show}></Tickets>
+          <SystemHealth show={show}></SystemHealth>
         </div>
       </div>
       <div className="drawer-side">
@@ -141,6 +143,21 @@ const Home = () => {
                 <BsChatRightDots /> 
               </span>
               Live Chat
+            </Link>
+          </li>
+          <li
+            onClick={() => {
+              setShow("system");
+            }}
+            className={`text-[15px] hover:bg-[#460073] hover:text-white rounded mt-2 ${
+              show === "system" ? "bg-[#460073] hover:text-white" : "bg-[#0f172a]"
+            }`}
+          >
+            <Link>
+              <span>
+                <BsChatRightDots /> 
+              </span>
+              System Health
             </Link>
           </li>
         </ul>
