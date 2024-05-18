@@ -15,6 +15,10 @@ import Faq from "../Faq/Faq";
 import { FaQ } from "react-icons/fa6";
 import SystemHealth from "../SystemHealth/SystemHealth";
 import BlogDashboard from "../BlogDashbord/BlogDashboard";
+import TranscriptionManagement from "../TranscriptionManagement/TranscriptionManagement";
+import LiveTranscriptionMonitoring from "../LiveTranscriptionMonitoring/LiveTranscriptionMonitoring";
+import { MdRecordVoiceOver } from "react-icons/md";
+import { RiLiveLine } from "react-icons/ri";
 
 const Home = () => {
   const [show, setShow] = useState("home");
@@ -36,6 +40,10 @@ const Home = () => {
           <Faq show={show}></Faq>
           <SystemHealth show={show}></SystemHealth>
           <BlogDashboard show={show}></BlogDashboard>
+          <TranscriptionManagement show={show}></TranscriptionManagement>
+          <LiveTranscriptionMonitoring
+            show={show}
+          ></LiveTranscriptionMonitoring>
         </div>
       </div>
       <div className="drawer-side">
@@ -88,6 +96,40 @@ const Home = () => {
                 <FaUsers />
               </span>
               Users
+            </Link>
+          </li>
+          <li
+            onClick={() => {
+              setShow("Transcription");
+            }}
+            className={`text-[15px] hover:bg-[#460073] hover:text-white rounded mt-2 ${
+              show === "Transcription"
+                ? "bg-[#460073] text-white"
+                : "bg-[#0f172a]"
+            }`}
+          >
+            <Link>
+              <span>
+                <MdRecordVoiceOver />
+              </span>
+              Transcription
+            </Link>
+          </li>
+          <li
+            onClick={() => {
+              setShow("LiveTranscription");
+            }}
+            className={`text-[15px] hover:bg-[#460073] hover:text-white rounded mt-2 ${
+              show === "LiveTranscription"
+                ? "bg-[#460073] text-white"
+                : "bg-[#0f172a]"
+            }`}
+          >
+            <Link>
+              <span>
+                <RiLiveLine />
+              </span>
+              Live Transcription
             </Link>
           </li>
           <li
