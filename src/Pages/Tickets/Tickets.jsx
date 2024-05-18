@@ -29,9 +29,9 @@ const Tickets = ({ show }) => {
     <div className={`${show === "tickets" ? "" : "hidden"} text-[16px]`}>
       <div className="min-h-screen bg-gray-900 text-white p-6">
         {/* Header */}
-        <div className="flex items-center justify-between bg-[#460073] p-4 rounded-md shadow-md">
+        <div className=" bg-[#460073] p-4 rounded-md shadow-md flex md:flex-row flex-col  md:items-center md:justify-between ">
           <h1 className="text-2xl font-bold">Ticket Management</h1>
-          <button className="bg-green-600 px-4 py-2 rounded-md hover:bg-green-700 flex items-center">
+          <button className="bg-green-600 px-4 py-2 rounded-md hover:bg-green-700 flex items-center mt-5 md:mt-0 mx-20 md:mx-0">
             <FaPlus className="mr-2" /> Create Ticket
           </button>
         </div>
