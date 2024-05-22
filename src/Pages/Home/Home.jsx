@@ -17,8 +17,15 @@ import SystemHealth from "../SystemHealth/SystemHealth";
 import BlogDashboard from "../BlogDashbord/BlogDashboard";
 import TranscriptionManagement from "../TranscriptionManagement/TranscriptionManagement";
 import LiveTranscriptionMonitoring from "../LiveTranscriptionMonitoring/LiveTranscriptionMonitoring";
-import { MdRecordVoiceOver } from "react-icons/md";
-import { RiLiveLine } from "react-icons/ri";
+import { MdOutlineSpatialAudioOff, MdRecordVoiceOver } from "react-icons/md";
+import { RiFolderHistoryLine, RiLiveLine } from "react-icons/ri";
+import AdminProfile from "../UsersPages/UserProfile";
+import AdminMail from "../AdminMail/AdminMail";
+import ResetPassword from "../UsersPages/ResetPassword";
+import Settings from "../Settings/Settings";
+import AudioTranscription from "../AudioTranscription/AudioTranscription";
+import LiveChatList from "../LiveChat/LiveChatList";
+import TranscriptionHistory from "../TranscriptionHistory/TranscriptionHistory";
 
 const Home = () => {
   const [show, setShow] = useState("home");
@@ -28,25 +35,43 @@ const Home = () => {
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
-        <Navbar setHideNav={setHideNav} hideNav={hideNav}></Navbar>
+        <Navbar
+          setHideNav={setHideNav}
+          hideNav={hideNav}
+          setShow={setShow}
+        ></Navbar>
         {/* Page content here */}
         <div className="w-full min-h-screen text-center h-full">
           <HomePage show={show}></HomePage>
           <Users show={show}></Users>
           <SubscriptionCard show={show}></SubscriptionCard>
           <Subscriber show={show}></Subscriber>
-          <LiveChat show={show}></LiveChat>
+          <LiveChat show={show} setShow={setShow}></LiveChat>
           <Tickets show={show}></Tickets>
           <Faq show={show}></Faq>
           <SystemHealth show={show}></SystemHealth>
           <BlogDashboard show={show}></BlogDashboard>
-          <TranscriptionManagement show={show}></TranscriptionManagement>
+          <TranscriptionManagement
+            show={show}
+            setShow={setShow}
+          ></TranscriptionManagement>
           <LiveTranscriptionMonitoring
+            setShow={setShow}
             show={show}
           ></LiveTranscriptionMonitoring>
+          <AdminProfile show={show}></AdminProfile>
+          <AdminMail show={show}></AdminMail>
+          <ResetPassword show={show}></ResetPassword>
+          <Settings show={show}></Settings>
+          <AudioTranscription show={show} setShow={setShow}></AudioTranscription>
+          <LiveChatList show={show} setShow={setShow}></LiveChatList>
+          <TranscriptionHistory
+            show={show}
+            setShow={setShow}
+          ></TranscriptionHistory>
         </div>
       </div>
-      <div className="drawer-side">
+      <div className="drawer-side overflow-scroll no-scrollbar">
         <label
           htmlFor="my-drawer-2"
           aria-label="close sidebar"
@@ -112,7 +137,7 @@ const Home = () => {
               <span>
                 <MdRecordVoiceOver />
               </span>
-              Transcription
+              Resycn AI
             </Link>
           </li>
           <li
@@ -132,6 +157,38 @@ const Home = () => {
               Live Transcription
             </Link>
           </li>
+          <li
+            onClick={() => {
+              setShow("TranscriptionHistory");
+            }}
+            className={`text-[15px] hover:bg-[#460073] hover:text-white rounded mt-2 ${
+              show === "TranscriptionHistory"
+                ? "bg-[#460073] text-white"
+                : "bg-[#0f172a]"
+            }`}
+          >
+            <Link>
+              <span>
+                <RiFolderHistoryLine />
+              </span>
+              Audio transcription
+            </Link>
+          </li>
+          {/* <li
+            onClick={() => {
+              setShow("audio");
+            }}
+            className={`text-[15px] hover:bg-[#460073] hover:text-white rounded mt-2 ${
+              show === "audio" ? "bg-[#460073] text-white" : "bg-[#0f172a]"
+            }`}
+          >
+            <Link>
+              <span>
+                <MdOutlineSpatialAudioOff />
+              </span>
+              Audio Transcription
+            </Link>
+          </li> */}
           <li
             onClick={() => {
               setShow("subscription");
@@ -215,10 +272,10 @@ const Home = () => {
           </li>
           <li
             onClick={() => {
-              setShow("liveChat");
+              setShow("liveChatList");
             }}
             className={`text-[15px] hover:bg-[#460073] hover:text-white rounded mt-2 ${
-              show === "liveChat"
+              show === "liveChatList"
                 ? "bg-[#460073] hover:text-white"
                 : "bg-[#0f172a]"
             }`}

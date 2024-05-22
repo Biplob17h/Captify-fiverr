@@ -39,7 +39,7 @@ const BlogDashboard = ({ show }) => {
       {/* Header */}
       <div className="bg-[#460073] p-4 rounded-md shadow-md flex md:flex-row flex-col  md:items-center md:justify-between">
         <h1 className="text-2xl font-bold">Blog Management</h1>
-        <button className="bg-green-600 px-4 py-2 rounded-md hover:bg-green-700 flex items-center mt-5 md:mt-0 mx-16 md:mx-0">
+        <button className="customBtn1 flex items-center mx-9 md:mx-0 mt-7 md:mt-0">
           <FaPlus className="mr-2" /> Create Blog Post
         </button>
       </div>

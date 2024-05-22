@@ -1,15 +1,25 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React from 'react';
-import { AiOutlineSend } from 'react-icons/ai';
+import React from "react";
+import { AiOutlineSend } from "react-icons/ai";
 
-const LiveChat = ({ show }) => {
+const LiveChat = ({ show, setShow }) => {
   return (
-    <div className={`flex flex-col h-screen bg-gray-900 text-white text-[16px] ${show === 'liveChat' ? '' : 'hidden'}`}>
+    <div
+      className={`flex flex-col h-screen bg-gray-900 text-white text-[16px] ${
+        show === "liveChat" ? "" : "hidden"
+      }`}
+    >
       {/* Header */}
       <header className="flex items-center justify-between p-4 bg-[#460073] shadow-md">
         <h1 className="text-xl font-semibold">Live Chat</h1>
-        <button className="text-sm bg-red-600 px-2 py-1 rounded-md hover:bg-red-700" aria-label="End Chat">
+        <button
+          className="text-sm bg-red-600 px-2 py-1 rounded-md hover:bg-red-700"
+          aria-label="End Chat"
+          onClick={() => {
+            setShow("liveChatList");
+          }}
+        >
           End Chat
         </button>
       </header>
@@ -40,7 +50,10 @@ const LiveChat = ({ show }) => {
           className="flex-grow p-2 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#460073]"
           aria-label="Type a message"
         />
-        <button className="ml-2 p-2 bg-[#460073] rounded-full hover:bg-[#36005a]" aria-label="Send">
+        <button
+          className="ml-2 p-2 bg-[#460073] rounded-full hover:bg-[#36005a]"
+          aria-label="Send"
+        >
           <AiOutlineSend className="text-xl" />
         </button>
       </footer>
@@ -49,4 +62,3 @@ const LiveChat = ({ show }) => {
 };
 
 export default LiveChat;
-

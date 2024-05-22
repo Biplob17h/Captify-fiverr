@@ -11,7 +11,7 @@ import NavBarProfile from "./NavBarProfile";
 import NavBarNotifications from "./NavBarNotifications";
 import NavBarFlags from "./NavBarFlags";
 
-const Navbar = ({ hideNav, setHideNav }) => {
+const Navbar = ({ hideNav, setHideNav, setShow }) => {
   const navigate = useNavigate();
   const [showNav, setShowNav] = useState(null);
   console.log(showNav);
@@ -68,7 +68,7 @@ const Navbar = ({ hideNav, setHideNav }) => {
           </span>
           <span
             onClick={() => {
-              showNav === "setting" ? setShowNav(null) : setShowNav("setting");
+              setShow("setting");
             }}
             className="mr-5 cursor-pointer"
           >
@@ -110,7 +110,7 @@ const Navbar = ({ hideNav, setHideNav }) => {
             </div>
           </div>
           <div>
-            <NavBarProfile showNav={showNav}></NavBarProfile>
+            <NavBarProfile setShow={setShow} showNav={showNav}></NavBarProfile>
           </div>
         </div>
       </div>

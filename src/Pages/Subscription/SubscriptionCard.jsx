@@ -9,7 +9,7 @@ const SubscriptionCard = ({ show }) => {
         show === "subscription" ? "" : "hidden"
       }`}
     >
-      <div className="w-full md:w-[400px] h-[450px] border border-[#460073] rounded-[8px] mb-5 md:mb-0 mr-10 md:mr-0">
+      <div className="w-full md:w-[400px] h-[450px] border border-[#460073] rounded-[8px] mb-16 sm:md-5 md:mb-5 lg:mb-0 mr-10 md:mr-0">
         <div className="flex justify-center mt-2">
           <h1 className="text-[15px] pr-3">Plan Name:</h1>
           <input
@@ -58,7 +58,7 @@ const SubscriptionCard = ({ show }) => {
             <FaPlus /> <span className="ml-4">Add more Features</span>
           </div>
         </div>
-        <div className="bg-[#460073] cursor-pointer hover:border hover:bg-black p-3 mt-[55px] rounded-[5px] w-[90%] mx-auto">
+        <div className="customBtn1 mt-[12%] mx-7">
           <h1 className="text-center">Update Pricing</h1>
         </div>
       </div>
@@ -112,13 +112,13 @@ const SubscriptionCard = ({ show }) => {
             <FaPlus /> <span className="ml-4">Add more Features</span>
           </div>
         </div>
-        <div className="bg-[#460073] cursor-pointer hover:border hover:bg-black p-3 mt-[55px] rounded-[5px] w-[90%] mx-auto">
+        <div className="customBtn1 mt-[12%] mx-7">
           <h1 className="text-center">Update Pricing</h1>
         </div>
       </div>
 
       <div className="w-full md:w-[200px] flex justify-center items-center mt-5 md:mt-0 mr-12 md:mr-0">
-        <CiCirclePlus size={100} className="cursor-pointer text-[#460073]" />
+        <CiCirclePlus size={100} className="cursor-pointer text-[#460073] hover:text-[#a100ff]" />
       </div>
     </div>
   );

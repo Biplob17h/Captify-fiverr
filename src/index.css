@@ -51,3 +51,37 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: #2e004d;
 }
+
+.customBtn1 {
+	background: #a100ff;
+  border-radius: 5px;
+	padding: 10px 35px;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	border: 2px solid #a100ff;
+	transition: 1s;
+	position: relative;
+  transition: ease-in;
+}
+
+.customBtn1:hover, .customBtn1:active {
+	color: white;
+}
+
+.customBtn1:after {
+	content: '';
+	position: absolute;
+	transition: all 0.5s;
+	width: 0%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	color: white;
+	z-index: 0;
+}
+
+.customBtn1:hover:after {
+	width: 100%;
+	background: #0000005b;
+}
+

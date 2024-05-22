@@ -27,7 +27,6 @@ const HomePage = ({ show }) => {
         </div>
 
         <div className="box box6">
-          {" "}
           <ChartBox {...chartBoxRevenue} />
         </div>
 
@@ -40,3 +39,4 @@ const HomePage = ({ show }) => {
 };
 
 export default HomePage;
+

@@ -22,8 +22,8 @@ const FaqBox = () => {
                
               />
             </div>
-            <div className="form-control mt-6">
-              <button className="btn bg-[#460073] text-white">Create new</button>
+            <div className="form-control mt-6 ">
+              <button className="customBtn1 text-[16px] md:mx-32">Create new</button>
             </div>
           </form>
         </div>

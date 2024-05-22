@@ -10,7 +10,7 @@ const SystemHealth = ({ show }) => {
         {/* Header */}
         <div className=" bg-[#460073] p-4 rounded-md shadow-md  md:flex md:items-center md:justify-between">
           <h1 className="text-xl md:text-2xl font-bold">System Health and Reporting</h1>
-          <button className="bg-green-600 px-4 py-2 rounded-md hover:bg-green-700 mt-6 md:mt-0">
+          <button className="customBtn1 mt-7 md:mt-0">
             Run Diagnostics
           </button>
         </div>
@@ -119,7 +119,7 @@ const SystemHealth = ({ show }) => {
             <p className="text-sm text-gray-400">
               Run system diagnostics and checks
             </p>
-            <button className="w-full mt-4 bg-[#460073] py-2 rounded-md hover:bg-[#36005a] transition-colors">
+            <button className="customBtn1 mt-3 w-[270px]">
               Run Diagnostics
             </button>
           </div>
@@ -133,7 +133,7 @@ const SystemHealth = ({ show }) => {
             <p className="text-sm text-gray-400">
               Manage automated recovery processes
             </p>
-            <button className="w-full mt-4 bg-[#460073] py-2 rounded-md hover:bg-[#36005a] transition-colors">
+            <button className="customBtn1 mt-3 w-[270px]">
               Initiate Recovery
             </button>
           </div>

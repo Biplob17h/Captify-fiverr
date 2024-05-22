@@ -5,7 +5,7 @@ import { IoMail } from "react-icons/io5";
 import { FaKey } from "react-icons/fa";
 import { MdLogout } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-const NavBarProfile = ({ showNav }) => {
+const NavBarProfile = ({ showNav, setShow }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -36,15 +36,24 @@ const NavBarProfile = ({ showNav }) => {
           </div>
         </div>
         <div className="bg-[#1b232d] h-[250px] rounded-b-[10px]  px-5 py-10">
-          <p className="hover:bg-[#460073] p-2 rounded-md cursor-pointer flex items-center">
+          <p
+            onClick={() => {
+              setShow("admin");
+            }}
+            className="hover:bg-[#460073] p-2 rounded-md cursor-pointer flex items-center"
+          >
             <FaUserCircle size={25} />{" "}
             <span className="text-[16px] ml-[10px]">Profile</span>
           </p>
-          <p className="hover:bg-[#460073] p-2 rounded-md cursor-pointer flex items-center">
+          <p onClick={() => {
+              setShow("mail");
+            }} className="hover:bg-[#460073] p-2 rounded-md cursor-pointer flex items-center">
             <IoMail size={20} />{" "}
             <span className="text-[16px] ml-[10px]"> Mail</span>
           </p>
-          <p className="hover:bg-[#460073] p-2 rounded-md cursor-pointer flex items-center">
+          <p onClick={() => {
+              setShow("password");
+            }} className="hover:bg-[#460073] p-2 rounded-md cursor-pointer flex items-center">
             <FaKey size={20} />{" "}
             <span className="text-[16px] ml-[10px]"> Password</span>
           </p>
